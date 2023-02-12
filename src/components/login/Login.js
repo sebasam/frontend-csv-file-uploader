@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { url } from './../Const'
 import Swal from "sweetalert2";
 import './../../assets/css/login.css'
+import { NavLink } from 'react-router-dom';
 
 export const Login = () => {
     const refEmail = useRef(null)
@@ -54,6 +55,7 @@ export const Login = () => {
                     <input ref={ refPassword } className="form-control" placeholder="Password" type='password' />
                     <button type="submit" className="btn btn-success text-white">Iniciar Sesión</button>
                 </form>
+                <span> <NavLink className='text-white' to='/register'>No tienes una cuenta? Regístrate</NavLink> </span>
             </div>
         </div>
     )
