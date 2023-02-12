@@ -1,0 +1,9 @@
+.file__manager.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+}
+#logout {
+    display: grid;
+    justify-items: end;
+}

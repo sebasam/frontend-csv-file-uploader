@@ -1,12 +1,13 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { url } from './../Const'
 import Swal from "sweetalert2";
 import './../../assets/css/login.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export const Login = () => {
     const refEmail = useRef(null)
     const refPassword = useRef(null)
+    const navigate = useNavigate()
     const handleSubmit = (event) => {
         event.preventDefault()
         const requestOptions = {
@@ -46,6 +47,12 @@ export const Login = () => {
             }
             )
     }
+
+    useEffect(() => {
+        if(localStorage.length > 0){
+            navigate('/file-manager')
+        }
+    }, [])
     return(
         <div className="container-fluid login__container">
             <div className="">
