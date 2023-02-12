@@ -3,9 +3,11 @@ import { FileUpload } from "./FileUpload";
 import './../../assets/css/file.css'
 import UploadService from "../../services/UploadService";
 import Swal from "sweetalert2";
+import { ReadFile } from "./ReadFile";
 
 export const File = () => {
     const [file, setFile] = useState()
+    const [id, setId] = useState('')
     const handleSubmit = (event) => {
         event.preventDefault()
         UploadService.sendFile(file)
@@ -29,7 +31,7 @@ export const File = () => {
     return(
         <div className="file__manager-container">
             <div id="logout">
-                <button className="btn btn-danger m-2">Cerrar sesión</button>
+                <button onClick={ (e) => { localStorage.clear() } } className="btn btn-danger m-2">Cerrar sesión</button>
             </div>
             <div className="files-container">
                 <div>
@@ -40,8 +42,11 @@ export const File = () => {
                     </form>
                 </div>
                 <div className="file-names">
-                    <FileUpload />
+                    <FileUpload click={ (e) => { setId(e.target.getAttribute('data-key')) } } />
                 </div>
+            </div>
+            <div className="files__read">
+                <ReadFile myId={ id } />
             </div>
         </div>
     )

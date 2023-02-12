@@ -1,0 +1,14 @@
+.read__form {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+    align-items: center;
+}
+.data {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+}

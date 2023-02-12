@@ -1,7 +1,7 @@
 .file__manager.container {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 20% repeat(2, 40%);
 }
 .files-container {
     display: grid;

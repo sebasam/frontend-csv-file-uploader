@@ -28,7 +28,7 @@ export const FileUpload = (props) => {
         <div>
             {
                 files.map(data => {
-                    return <span data-key={ data.name } key={ data._id } className="text-white mt-3"> { data.name } </span>
+                    return <span onClick={ props.click } data-key={ data._id } key={ data.name } className="text-white mt-3"> { data.name } </span>
                 })
             }
         </div>
