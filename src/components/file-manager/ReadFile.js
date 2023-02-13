@@ -28,6 +28,10 @@ export const ReadFile = (props) => {
             })
     }
 
+    const handleToken = () => {
+        
+    }
+
     useEffect(() => {
         setId(props.myId)
     }, [props.myId])
